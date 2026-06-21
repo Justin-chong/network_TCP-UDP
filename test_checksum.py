@@ -1,0 +1,20 @@
+def calc(data):
+    return sum(data) & 0xFF
+
+# 测试 AA 55 03 01 48 69 (Hi, 不含校验和)
+data = bytes([0xAA, 0x55, 0x03, 0x01, 0x48, 0x69])
+print('Hi 校验和:', hex(calc(data)))
+
+# 测试 AA 55 03 01 41 42 (AB, 不含校验和)
+data = bytes([0xAA, 0x55, 0x03, 0x01, 0x41, 0x42])
+print('AB 校验和:', hex(calc(data)))
+
+# 测试 AA 55 06 01 48 65 6C 6C 6F 21 (Hello!, 不含校验和)
+data = bytes([0xAA, 0x55, 0x06, 0x01, 0x48, 0x65, 0x6C, 0x6C, 0x6F, 0x21])
+print('Hello! 校验和:', hex(calc(data)))
+
+# 你测试的 0C 是不是正确
+data = bytes([0xAA, 0x55, 0x03, 0x01, 0x48, 0x69])
+expected = 0x0C
+actual = calc(data)
+print(f'你测试的 0x0C: 实际 = 0x{actual:02X}, 匹配 = {actual == expected}')

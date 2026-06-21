@@ -1,0 +1,38 @@
+﻿# Qt 构建输出目录
+build-*/
+debug/
+release/
+
+# Qt 本地用户配置（每个人环境不同，绝对不能提交）
+*.pro.user
+*.pro.user.*
+*.pri.user
+*.qmake.stash
+
+# 编译中间生成文件
+Makefile*
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+*.o
+*.obj
+*.res
+*.rc
+
+# 可执行文件与动态库
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# 日志与临时文件
+*.log
+*.tmp
+*.bak
+
+# 操作系统缓存
+.DS_Store
+Thumbs.db
