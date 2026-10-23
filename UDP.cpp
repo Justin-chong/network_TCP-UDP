@@ -1,4 +1,4 @@
-﻿#include "UDP.h"
+#include "UDP.h"
 #include <QDebug>
 
 UdpSocket::UdpSocket(QObject *parent)
